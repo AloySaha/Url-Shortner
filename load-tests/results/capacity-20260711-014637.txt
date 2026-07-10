@@ -1,0 +1,294 @@
+
+========== BASELINE mixed c=20 d=20s ==========
+
+Load test target: http://localhost:3000
+Scenario=mixed concurrency=20 duration=30s
+Preflight OK (db=true redis=true redisConnected=true)
+Warmup: creating 50 short links... done (50 codes)
+
+=== mixed ===
+  requests : 53752  ok=53752  fail=0  errors=0.00%
+  throughput: 1791.2 req/s  over 30.01s
+  latency  : min=1.9  avg=11.1  p50=10.1  p90=17.9  p95=20.8  p99=29.4  max=81.3 ms
+  statuses : {"200":19457,"201":9736,"302":24559}
+  threshold: PASS error_rate<=0.03 (actual=0.000)
+  threshold: PASS p95<=700ms (actual=20.756)
+
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "mixed",
+      "total": 53752,
+      "ok": 53752,
+      "fail": 0,
+      "errorRate": 0,
+      "rps": 1791.1773518833086,
+      "durationSec": 30.009312,
+      "latencyMs": {
+        "min": 1.9472999999998137,
+        "avg": 11.148407798779637,
+        "p50": 10.149100000000544,
+        "p90": 17.91739999999845,
+        "p95": 20.756100000000004,
+        "p99": 29.43920000000071,
+        "max": 81.33669999999984
+      },
+      "statuses": {
+        "200": 19457,
+        "201": 9736,
+        "302": 24559
+      },
+      "topErrors": [],
+      "bytes": 32341456
+    }
+  ]
+}
+
+Load test finished: PASS
+
+
+========== ELEVATED mixed c=50 d=25s ==========
+
+Load test target: http://localhost:3000
+Scenario=mixed concurrency=20 duration=30s
+Preflight OK (db=true redis=true redisConnected=true)
+Warmup: creating 50 short links... done (50 codes)
+
+=== mixed ===
+  requests : 52915  ok=52915  fail=0  errors=0.00%
+  throughput: 1763.5 req/s  over 30.01s
+  latency  : min=0.8  avg=11.3  p50=10.5  p90=18.5  p95=22.3  p99=32.1  max=65.0 ms
+  statuses : {"200":19225,"201":9551,"302":24139}
+  threshold: PASS error_rate<=0.03 (actual=0.000)
+  threshold: PASS p95<=700ms (actual=22.257)
+
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "mixed",
+      "total": 52915,
+      "ok": 52915,
+      "fail": 0,
+      "errorRate": 0,
+      "rps": 1763.5112515167273,
+      "durationSec": 30.0054791,
+      "latencyMs": {
+        "min": 0.8396999999968102,
+        "avg": 11.322429564395708,
+        "p50": 10.535100000000966,
+        "p90": 18.496100000000297,
+        "p95": 22.256999999999607,
+        "p99": 32.07330000000002,
+        "max": 64.99119999999999
+      },
+      "statuses": {
+        "200": 19225,
+        "201": 9551,
+        "302": 24139
+      },
+      "topErrors": [],
+      "bytes": 31785159
+    }
+  ]
+}
+
+Load test finished: PASS
+
+
+========== PEAK mixed c=100 d=30s ==========
+
+Load test target: http://localhost:3000
+Scenario=mixed concurrency=20 duration=30s
+Preflight OK (db=true redis=true redisConnected=true)
+Warmup: creating 50 short links... done (50 codes)
+
+=== mixed ===
+  requests : 63412  ok=63412  fail=0  errors=0.00%
+  throughput: 2113.1 req/s  over 30.01s
+  latency  : min=1.4  avg=9.4  p50=9.2  p90=15.0  p95=16.9  p99=22.0  max=82.8 ms
+  statuses : {"200":23009,"201":11615,"302":28788}
+  threshold: PASS error_rate<=0.03 (actual=0.000)
+  threshold: PASS p95<=700ms (actual=16.886)
+
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "mixed",
+      "total": 63412,
+      "ok": 63412,
+      "fail": 0,
+      "errorRate": 0,
+      "rps": 2113.147111105594,
+      "durationSec": 30.008322500000002,
+      "latencyMs": {
+        "min": 1.3774000000012165,
+        "avg": 9.449174186273973,
+        "p50": 9.172200000000885,
+        "p90": 14.99200000000019,
+        "p95": 16.8862999999983,
+        "p99": 21.95139999999992,
+        "max": 82.76819999999998
+      },
+      "statuses": {
+        "200": 23009,
+        "201": 11615,
+        "302": 28788
+      },
+      "topErrors": [],
+      "bytes": 38495795
+    }
+  ]
+}
+
+Load test finished: PASS
+
+
+========== EXTREME mixed c=200 d=30s ==========
+
+Load test target: http://localhost:3000
+Scenario=mixed concurrency=20 duration=30s
+Preflight OK (db=true redis=true redisConnected=true)
+Warmup: creating 50 short links... done (50 codes)
+
+=== mixed ===
+  requests : 52832  ok=52832  fail=0  errors=0.00%
+  throughput: 1760.1 req/s  over 30.02s
+  latency  : min=0.9  avg=11.3  p50=9.8  p90=17.9  p95=21.2  p99=58.2  max=110.8 ms
+  statuses : {"200":19229,"201":9551,"302":24052}
+  threshold: PASS error_rate<=0.03 (actual=0.000)
+  threshold: PASS p95<=700ms (actual=21.181)
+
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "mixed",
+      "total": 52832,
+      "ok": 52832,
+      "fail": 0,
+      "errorRate": 0,
+      "rps": 1760.1390323267199,
+      "durationSec": 30.0158107,
+      "latencyMs": {
+        "min": 0.8532000000013795,
+        "avg": 11.343077761584016,
+        "p50": 9.803299999999581,
+        "p90": 17.924300000000585,
+        "p95": 21.18109999999797,
+        "p99": 58.21779999999853,
+        "max": 110.77739999999903
+      },
+      "statuses": {
+        "200": 19229,
+        "201": 9551,
+        "302": 24052
+      },
+      "topErrors": [],
+      "bytes": 32073292
+    }
+  ]
+}
+
+Load test finished: PASS
+
+
+========== PEAK redirect c=150 d=25s ==========
+
+Load test target: http://localhost:3000
+Scenario=mixed concurrency=20 duration=30s
+Preflight OK (db=true redis=true redisConnected=true)
+Warmup: creating 50 short links... done (50 codes)
+
+=== mixed ===
+  requests : 56941  ok=56941  fail=0  errors=0.00%
+  throughput: 1897.7 req/s  over 30.00s
+  latency  : min=1.2  avg=10.5  p50=9.6  p90=18.8  p95=21.3  p99=27.5  max=67.6 ms
+  statuses : {"200":20627,"201":10537,"302":25777}
+  threshold: PASS error_rate<=0.03 (actual=0.000)
+  threshold: PASS p95<=700ms (actual=21.342)
+
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "mixed",
+      "total": 56941,
+      "ok": 56941,
+      "fail": 0,
+      "errorRate": 0,
+      "rps": 1897.7353509285304,
+      "durationSec": 30.004710600000003,
+      "latencyMs": {
+        "min": 1.2131000000008498,
+        "avg": 10.522897335838847,
+        "p50": 9.633999999998196,
+        "p90": 18.813099999999395,
+        "p95": 21.342099999999846,
+        "p99": 27.516599999999016,
+        "max": 67.59440000000001
+      },
+      "statuses": {
+        "200": 20627,
+        "201": 10537,
+        "302": 25777
+      },
+      "topErrors": [],
+      "bytes": 34311388
+    }
+  ]
+}
+
+Load test finished: PASS
+
+
+========== PEAK shorten c=80 d=25s ==========
+
+Load test target: http://localhost:3000
+Scenario=mixed concurrency=20 duration=30s
+Preflight OK (db=true redis=true redisConnected=true)
+Warmup: creating 50 short links... done (50 codes)
+
+=== mixed ===
+  requests : 49378  ok=49378  fail=0  errors=0.00%
+  throughput: 1645.0 req/s  over 30.02s
+  latency  : min=0.8  avg=12.1  p50=9.6  p90=22.3  p95=26.7  p99=68.1  max=311.5 ms
+  statuses : {"200":17861,"201":8968,"302":22549}
+  threshold: PASS error_rate<=0.03 (actual=0.000)
+  threshold: PASS p95<=700ms (actual=26.688)
+
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "mixed",
+      "total": 49378,
+      "ok": 49378,
+      "fail": 0,
+      "errorRate": 0,
+      "rps": 1645.0296911068467,
+      "durationSec": 30.016479500000003,
+      "latencyMs": {
+        "min": 0.7559000000001106,
+        "avg": 12.137690921057937,
+        "p50": 9.571300000003248,
+        "p90": 22.31000000000131,
+        "p95": 26.688000000000102,
+        "p99": 68.1443999999974,
+        "max": 311.45390000000043
+      },
+      "statuses": {
+        "200": 17861,
+        "201": 8968,
+        "302": 22549
+      },
+      "topErrors": [],
+      "bytes": 29851618
+    }
+  ]
+}
+
+Load test finished: PASS
+

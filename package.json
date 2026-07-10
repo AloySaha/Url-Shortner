@@ -1,0 +1,26 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "Tier-agnostic Express URL shortener for Docker learning project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "load": "node load-tests/node/load-test.mjs",
+    "load:smoke": "node load-tests/node/load-test.mjs --scenario=mixed --concurrency=5 --duration=15 --warmup=20",
+    "load:health": "node load-tests/node/load-test.mjs --scenario=health --concurrency=50 --duration=20 --warmup=0",
+    "load:shorten": "node load-tests/node/load-test.mjs --scenario=shorten --concurrency=25 --duration=30 --warmup=0",
+    "load:redirect": "node load-tests/node/load-test.mjs --scenario=redirect --concurrency=50 --duration=30 --warmup=100",
+    "load:mixed": "node load-tests/node/load-test.mjs --scenario=mixed --concurrency=40 --duration=45 --warmup=80",
+    "load:stress": "node load-tests/node/load-test.mjs --scenario=mixed --concurrency=100 --duration=60 --warmup=120",
+    "load:all": "node load-tests/node/load-test.mjs --scenario=all --concurrency=20 --duration=20 --warmup=40",
+    "load:k6:smoke": "k6 run load-tests/k6/smoke.js",
+    "load:k6:load": "k6 run load-tests/k6/load.js",
+    "load:k6:stress": "k6 run load-tests/k6/stress.js",
+    "load:k6:spike": "k6 run load-tests/k6/spike.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "redis": "^4.7.0"
+  }
+}
