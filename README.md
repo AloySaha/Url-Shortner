@@ -45,7 +45,7 @@ If you are looking at this to learn or review, focus on those files.
 
 2. Start everything with Docker Compose:
    ```bash
-   docker compose up --build
+   docker compose up --d
    ```
 
 3. Open `http://localhost` in your browser.
