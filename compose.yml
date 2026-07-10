@@ -19,7 +19,7 @@ services:
   shortner:
     container_name: Shortner_Backend
     build:
-      context: .
+      context: ./app
     ports:
       - 3000:${PORT}
     env_file:
