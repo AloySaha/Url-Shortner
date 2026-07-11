@@ -18,8 +18,7 @@ services:
       
   shortner:
     container_name: Shortner_Backend
-    build:
-      context: ./app
+    image: aloysaha/url-shortner:latest
     ports:
       - 3000:${PORT}
     env_file:
