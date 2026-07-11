@@ -380,6 +380,7 @@ app.get('/health', async (req, res) => {
       db: DB_ENABLED,
       redis: REDIS_ENABLED,
       redisConnected: Boolean(redisOk),
+      version: "1.0.0"
     });
   } catch (err) {
     res.status(503).json({ status: 'error', message: err.message });
