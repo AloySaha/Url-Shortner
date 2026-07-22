@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: url-shortner-ns
+
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate 
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: url-app
+  template:
+    metadata:
+      labels:
+        app: url-app
+    spec:
+      containers:
+      - name: url-app-container
+        image: aloysaha/url-shortner:latest
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: url-shortner-config
+        - secretRef:
+            name: url-shortner-secrets
+        startupProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          failureThreshold: 10
+          periodSeconds: 10
+        livenessProbe: 
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 3
+          timeoutSeconds: 1
+          failureThreshold: 10
+
+
+
+
+        
+
+  
+

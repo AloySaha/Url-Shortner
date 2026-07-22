@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  namespace: url-shortner-ns
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: postgres-db
+  template:
+    metadata:
+      labels:
+        app: postgres-db
+    spec:
+      imagePullSecrets:
+        - name: redis-key
+      initContainers:
+      - name: fix-permissions
+        image: alpine:latest 
+        command: ["sh", "-c", "chown -R 70:70 /var/lib/postgresql/18/data && chmod -R 700 /var/lib/postgresql/18/data"]
+        securityContext:
+          runAsUser: 0
+        volumeMounts:
+          - name: postgres-data
+            mountPath: /var/lib/postgresql/18/data
+      containers:
+      - name: postgres-db-container
+        image: dhi.io/postgres:18
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: url-shortner-secrets
+              key: PGUSER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: url-shortner-secrets
+              key: PGPASSWORD
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: url-shortner-config
+              key: PGDATABASE
+        startupProbe:
+          exec:
+            command: ["sh", "-c", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
+          failureThreshold: 10
+          periodSeconds: 10
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/18/data
+          
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: postgres-pvc

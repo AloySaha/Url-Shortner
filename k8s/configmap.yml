@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: url-shortner-config
+  namespace: url-shortner-ns
+data:
+  PORT: "3000"
+  DB_ENABLED: "true"
+  REDIS_ENABLED: "true"
+  PGHOST: postgres-service
+  PGPORT: "5432"
+  PGDATABASE: shortener
+  REDIS_HOST: redis-service
+  REDIS_PORT: "6379"
