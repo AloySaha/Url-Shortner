@@ -39,8 +39,6 @@ spec:
             secretKeyRef:
               name: url-shortner-secrets
               key: REDIS_PASSWORD
-          periodSeconds: 3
-          failureThreshold: 1
         volumeMounts:
         - name: redis-data
           mountPath: /data
@@ -48,14 +46,3 @@ spec:
       - name: redis-data
         persistentVolumeClaim:
           claimName: redis-pvc
-
-
-          
-      #   volumeMounts:
-      #   - name: config-volume
-      #     mountPath: /etc/redis/redis.conf
-      #     subPath: redis.conf
-      # volumes:
-      # - name: config-volume
-      #   configMap:
-      #     name: redis-configmap
