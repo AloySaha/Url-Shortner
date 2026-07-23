@@ -39,6 +39,13 @@ spec:
             secretKeyRef:
               name: url-shortner-secrets
               key: REDIS_PASSWORD
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
         volumeMounts:
         - name: redis-data
           mountPath: /data
