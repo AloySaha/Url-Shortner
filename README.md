@@ -17,25 +17,6 @@ If you are looking at this to learn or review, focus on those files.
 - **Containerization:** Docker + Docker Compose
 - **Load Testing:** Node.js scripts + k6
 
-## Project Structure
-
-```
-.
-├── server.js           # Express app (AI generated)
-├── public/             # Frontend files (AI generated)
-├── Dockerfile          # Multi-stage build - the learning part
-├── compose.yml         # Full stack orchestration - the learning part
-├── nginx/              # Reverse proxy config - the learning part
-│   └── default.conf
-├── redis/              # Redis config - the learning part
-│   └── redis.conf
-├── load-tests/         # Load testing scripts (AI generated)
-│   ├── node/
-│   └── k6/
-├── .env.example        # Environment variables template
-└── package.json
-```
-
 ## Quick Start
 
 1. Copy the environment file and fill in your values:
