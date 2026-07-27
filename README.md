@@ -127,6 +127,7 @@ The GitHub Actions workflow (in `.github/workflows/`) handles:
 
 - 🟡 Split app into frontend and backend microservices ![Docker](https://img.shields.io/badge/Tool-Docker-2496ED?logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Tool-Kubernetes-326CE5?logo=kubernetes&logoColor=white)
 - 🟡 Implement building and pushing images for frontend and backend via CI ![GitHub Actions](https://img.shields.io/badge/Tool-GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
+- 🟡 Shift to PR-based prod branches with CI running tests on PRs before merging to trigger image builds ![GitHub Actions](https://img.shields.io/badge/Tool-GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
 - 🟡 Tag images by commit SHA on build using GitHub Actions ![GitHub Actions](https://img.shields.io/badge/Tool-GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
 - 🟡 Edit manifest files with the new commit SHA on push ![GitHub Actions](https://img.shields.io/badge/Tool-GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
 - 🟡 Enable HPA and VPA using K8s Metrics API ![Kubernetes](https://img.shields.io/badge/Tool-Kubernetes-326CE5?logo=kubernetes&logoColor=white)
